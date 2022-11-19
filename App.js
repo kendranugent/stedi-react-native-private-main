@@ -19,7 +19,7 @@ const loggedInStates={
 
 const App = () =>{
   const [isFirstLaunch, setFirstLaunch] = React.useState(true);
-  const[loggedInState, setLoggedInState] =React.useState("NOT_LOGGED_IN");
+  const [loggedInState, setLoggedInState] =React.useState("NOT_LOGGED_IN");
   const [homeTodayScore, setHomeTodayScore] = React.useState(0);
   const [phoneNumber, setPhoneNumber] = React.useState("");
   const [oneTimePassword, setOneTimePassword] =React.useState(null);

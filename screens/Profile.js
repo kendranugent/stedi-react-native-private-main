@@ -1,8 +1,8 @@
-
-import React from 'react';
+import React, { useEffect, useState, } from 'react';
 import { StyleSheet, Text, View, Image, SafeAreaView , Share, ScrollView, Button} from 'react-native';
 import { Card, CardTitle, CardContent} from 'react-native-material-cards';
 import BarChart from 'react-native-bar-chart';
+import {Camera} from 'expo-camera'; //new//
 // import Share from 'react-native-share';
 
 
@@ -20,7 +20,14 @@ import BarChart from 'react-native-bar-chart';
 // labels
 // const horizontalData = ['S', 'M', 'T', 'W', 'T', 'F','S'];
 
-const Profile = (props) => {
+const Profile = (props) => { //insert new code here//
+  useEffect(()=>{  
+    const getUserInfo = async ()=>{
+      const cameraPermission = await Camera.requestCameraPermissionsAsync();
+    };
+    getUserInfo();
+  },[]);
+
   const myCustomerShare = async() =>{
     const shareOptions = {
       message: 'This is a test'
